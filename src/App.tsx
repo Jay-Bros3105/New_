@@ -175,7 +175,7 @@ export default function App() {
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl overflow-hidden shadow-lg shadow-fastline-blue/20">
               <img 
-                src="FastLine.png" 
+                src="https://api.dicebear.com/7.x/shapes/svg?seed=JSLFastLine&backgroundColor=0A84FF" 
                 className="w-full h-full object-cover" 
                 alt="JSL FastLine Logo"
                 referrerPolicy="no-referrer"
