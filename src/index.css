@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@theme {
+  --color-fastline-blue: #0A84FF;
+  --color-electric-teal: #00E5CC;
+  --color-deep-graphite: #020617; /* Darker for elite feel */
+  --color-card-bg: #0F172A;
+  --color-soft-white: #E5E7EB;
+  --color-ai-purple: #7C3AED;
+  --color-energy-orange: #F97316;
+  --color-offline-red: #EF4444;
+  --color-online-green: #22C55E;
+  --color-text-primary: #E5E7EB;
+  --color-text-secondary: rgba(229, 231, 235, 0.5);
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+.light-theme {
+  --color-deep-graphite: #F8FAFC;
+  --color-card-bg: #FFFFFF;
+  --color-soft-white: #1E293B;
+  --color-text-primary: #1E293B;
+  --color-text-secondary: rgba(30, 41, 59, 0.5);
+  --color-fastline-blue: #0070F3;
+}
+
+@layer base {
+  body {
+    @apply bg-deep-graphite text-text-primary font-sans antialiased overflow-hidden;
+    background-image: 
+      radial-gradient(circle at 50% 0%, rgba(10, 132, 255, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 0% 100%, rgba(0, 229, 204, 0.05) 0%, transparent 50%);
+  }
+}
+
+/* RECIPE 3: HARDWARE / SPECIALIST TOOL */
+.widget-container {
+  @apply bg-card-bg rounded-xl border border-black/5 dark:border-white/10 shadow-2xl overflow-hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.dark .widget-container {
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.radial-track {
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+
+.status-label {
+  @apply font-mono text-[10px] uppercase tracking-widest opacity-50;
+}
+
+.data-value {
+  @apply font-mono tracking-tighter;
+}
+
+/* RECIPE 1: TECHNICAL DASHBOARD */
+.data-row {
+  @apply border-b border-white/5 py-3 px-4 transition-all cursor-pointer;
+}
+
+.data-row:hover {
+  @apply bg-white/5;
+}
+
+.primary-gradient {
+  background: linear-gradient(135deg, #0A84FF, #00E5CC);
+}
+
+.ai-gradient {
+  background: linear-gradient(135deg, #7C3AED, #0A84FF);
+}
+
+.glass-card {
+  @apply bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl;
+}
+
+/* SCANNING ANIMATION */
+@keyframes scan {
+  0% { transform: translateY(-100%); opacity: 0; }
+  50% { opacity: 0.5; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+
+.scan-line {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00E5CC, transparent);
+  animation: scan 2s linear infinite;
+}

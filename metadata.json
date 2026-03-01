@@ -1,0 +1,5 @@
+{
+  "name": "JSL FastLine",
+  "description": "JSL FastLine: Fast Connections, Smart Future. A hybrid social and learning platform featuring real-time synchronization and a high-performance architecture.",
+  "requestFramePermissions": ["microphone", "geolocation"]
+}
